@@ -1,0 +1,16 @@
+{
+    "extends": ["@bengineer.dev/core"],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "no-undef": "off",
+        "import/no-nodejs-modules": "off",
+        "max-statements-per-line": "off",
+        "curly": "off"
+    },
+    "overrides": [
+        {
+            "files": ["bin.ts", "io.ts", "*.test.ts"],
+            "rules": { "no-console": "off" }
+        }
+    ]
+}

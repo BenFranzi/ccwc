@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["es2018"],
+    "baseUrl": "src",
+    "outDir": "build",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "typeRoots": ["node_modules/@types", "src/@types"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "sourceMap": true,
+    "strict": false
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts"],
+  "ts-node": { "swc": true }
+}
