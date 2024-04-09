@@ -29,7 +29,7 @@
     "build/bin.cjs"
   ],
   "devDependencies": {
-    "@bengineer.dev/eslint-config-core": "1.0.0",
+    "@bengineer.dev/eslint-config-core": "^1.0.3",
     "@jest/globals": "^29.7.0",
     "@swc/core": "^1.4.11",
     "@swc/jest": "^0.2.36",

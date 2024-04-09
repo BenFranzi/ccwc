@@ -1,9 +1,9 @@
 {
     "extends": ["@bengineer.dev/core"],
     "parser": "@typescript-eslint/parser",
-    "rules": {
-        "import/no-nodejs-modules": "off",
-        "curly": ["error", "multi"]
+    "env": {
+        "node": true,
+        "jest": true
     },
     "overrides": [
         {
