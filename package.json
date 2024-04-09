@@ -1,6 +1,6 @@
 {
   "name": "@bengineer.dev/ccwc",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "wc but now in javascript!",
   "type": "module",
   "license": "MIT",
