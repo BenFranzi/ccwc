@@ -3,12 +3,10 @@ import { constants, ReadStream } from 'fs';
 import { createReadStream } from 'node:fs';
 
 export function getStream(options: Options): ReadStream | NodeJS.ReadStream {
-  if (!options.file && !process.stdin.isTTY) {
-    return process.stdin;
-  }
+  if (!options.file && !process.stdin.isTTY) return process.stdin;
 
   if (!options.file || !exists(options.file)) {
-    exitWithError(`file ${options.file} is not valid`);
+    terminateWithError(`file ${options.file} is not valid`);
   }
 
   return createReadStream(options.file);
@@ -23,7 +21,7 @@ export function getOptions(): Options {
     if (arg === '-l') options.l = true;
     if (arg === '-w') options.w = true;
     if (arg === '-m') options.m = true;
-    if (!/^-(c|l|w|m)$/.test(arg)) {exitWithError(`Illegal option ${arg}`);}
+    if (!/^-(c|l|w|m)$/.test(arg)) terminateWithError(`Illegal option ${arg}`);
   }
 
   options.file = process.argv.length > 2 && !/^-(c|l|w|m)$/.test(process.argv.at(-1))
@@ -38,11 +36,11 @@ export function getMessage(options: Options, result: Result): string {
 
   let message = '';
 
-  if (options.l || noFlags) {message += `${result.lines}`.padStart(8);}
-  if (options.w || noFlags) {message += `${message ? ' ' : ''}${result.words}`.padStart(8);}
-  if (options.c || noFlags) {message += `${message ? ' ' : ''}${result.bytes}`.padStart(8);}
-  if (options.m) {message += `${message ? ' ' : ''}${result.characters}`.padStart(8);}
-  if (options.file) {message += `${message ? ' ' : ''}${options.file}`.padStart(8);}
+  if (options.l || noFlags) message += `${result.lines}`.padStart(8);
+  if (options.w || noFlags) message += `${message ? ' ' : ''}${result.words}`.padStart(8);
+  if (options.c || noFlags) message += `${message ? ' ' : ''}${result.bytes}`.padStart(8);
+  if (options.m) message += `${message ? ' ' : ''}${result.characters}`.padStart(8);
+  if (options.file) message += `${message ? ' ' : ''}${options.file}`.padStart(8);
 
   return message;
 }
@@ -53,7 +51,7 @@ async function exists(file: string): Promise<boolean> {
     .catch(() => false)
 }
 
-function exitWithError(message: string): void {
+function terminateWithError(message: string): void {
   console.error(message);
   process.exit(1);
 }

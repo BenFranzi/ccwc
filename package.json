@@ -1,17 +1,16 @@
 {
   "name": "@bengineer.dev/ccwc",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "wc but now in javascript!",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/BenFranzi/benfig/tree/main/packages/eslint-config-core",
+  "homepage": "https://github.com/BenFranzi/ccwc",
   "bugs": {
-    "url": "https://github.com/BenFranzi/benfig/issues"
+    "url": "https://github.com/BenFranzi/ccwc/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BenFranzi/benfig.git",
-    "directory": "packages/eslint-config-core"
+    "url": "git+https://github.com/BenFranzi/ccwc.git"
   },
   "scripts": {
     "start": "build/bin.cjs",

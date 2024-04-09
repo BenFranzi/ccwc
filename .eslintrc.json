@@ -2,10 +2,8 @@
     "extends": ["@bengineer.dev/core"],
     "parser": "@typescript-eslint/parser",
     "rules": {
-        "no-undef": "off",
         "import/no-nodejs-modules": "off",
-        "max-statements-per-line": "off",
-        "curly": "off"
+        "curly": ["error", "multi"]
     },
     "overrides": [
         {
